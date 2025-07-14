@@ -15,14 +15,14 @@ export const registerUser = async (req: Request, res: Response) => {
 
   const token = generateToken(user._id.toString());
   res.status(201).json({ token });
-  const newUser = new User({
-    name,
-    email,
-    password: hashedPassword,
-    role: "user", // <-- this is how it's identified
-    status: "active",
-    lastActive: new Date(),
-  });
+  // const newUser = new User({
+  //   name,
+  //   email,
+  //   password: hashedPassword,
+  //   role: "user", // <-- this is how it's identified
+  //   status: "active",
+  //   lastActive: new Date(),
+  // });
 };
 
 export const loginUser = async (req: Request, res: Response) => {
